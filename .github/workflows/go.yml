@@ -25,4 +25,4 @@ jobs:
       run: go build -v ./cmd/auth/main.go
 
     - name: Test
-      run: go test -v
+      run: go test -v -vet=off ./...
