@@ -4,10 +4,11 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"github.com/kochnevns/finanses-auth/internal/jwt"
-	"github.com/kochnevns/finanses-auth/internal/logger/sl"
 	"log/slog"
 	"time"
+
+	"github.com/kochnevns/finanses-auth/internal/jwt"
+	"github.com/kochnevns/finanses-auth/internal/logger/sl"
 
 	"github.com/kochnevns/finanses-auth/internal/models"
 	"github.com/kochnevns/finanses-auth/internal/storage"
@@ -137,6 +138,7 @@ func (a *Auth) RegisterNewUser(ctx context.Context, email string, pass string) (
 
 	id, err := a.usrSaver.SaveUser(ctx, email, passHash)
 	if err != nil {
+		fmt.Println(err)
 		log.Error("failed to save user", sl.Err(err))
 
 		return 0, fmt.Errorf("%s: %w", op, err)
