@@ -3,12 +3,14 @@ package authgrpc
 import (
 	"context"
 	"errors"
+	"github.com/kochnevns/finanses-auth/internal/storage"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
 	authGrpcSrv "github.com/kochnevns/finanses-auth/gen/go"
+	"github.com/kochnevns/finanses-auth/internal/services/auth"
 )
 
 type Auth interface {
