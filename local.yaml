@@ -1,6 +1,6 @@
 env: "local"
 
-storage_path: "./db/finances.db"
+storage_path: "./db/finances.db.sqlite"
 
 grpc:
     port: 8080
